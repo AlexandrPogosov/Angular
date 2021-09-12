@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {VehiclesService} from "./vehicles.service";
+import {IVechicles, IVechiclesResponse} from "../../shared/intefaces";
 
 @Component({
   selector: 'app-vehicles',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehiclesComponent implements OnInit {
 
-  constructor() { }
+  public vechicles: IVechicles[] = []
+  constructor(private httVehicles: VehiclesService) { }
 
   ngOnInit(): void {
+    this.httVehicles.getVehicles().subscribe((res: IVechiclesResponse) => {
+      this.vechicles = res.results
+      console.log(this.vechicles);
+    })
   }
 
 }

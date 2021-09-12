@@ -1,1 +1,20 @@
-<p>starpships works!</p>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<div class="container mt-5 mb-3">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let starship of starships">
+      <div class="card border-success mb-3">
+        <div class="card-header">{{starship.name}}</div>
+        <div class="card-body text-success">
+          <h5 class="card-title">Model: {{starship.model}} <br> Passengers: {{starship.passengers}}</h5>
+          <hr>
+          <p class="card-text">Length: {{starship.length}}</p>
+          <p class="card-text">Cargo capacity: {{starship.cargo_capacity}}</p>
+          <p class="card-text">Cost: {{starship.cost_in_credits}}</p>
+          <p class="card-text">Max speed: {{starship.max_atmosphering_speed}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p>vehicles works!</p>
+

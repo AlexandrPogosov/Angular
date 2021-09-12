@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FilmsService} from "./films.service";
+import {IFilms, IFilmsResponse} from "../../shared/intefaces";
 
 @Component({
   selector: 'app-films',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmsComponent implements OnInit {
 
-  constructor() { }
+  public films: IFilms[] = [];
+
+  constructor(private httpFilms: FilmsService) { }
 
   ngOnInit(): void {
+    this.httpFilms.getFilms().subscribe( (res: IFilmsResponse) => {
+      this.films = res.results
+      console.log(this.films)
+    })
   }
 
 }

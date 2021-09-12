@@ -1,0 +1,9 @@
+.card-header{
+  color: blue;
+  font-weight: bold;
+}
+
+.card-text{
+  color: red;
+  font-weight: bolder;
+}
